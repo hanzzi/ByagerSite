@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+    <title>Gallery</title>
+    <!-- CSS and JQuery -->
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.css" />
+    <link rel="stylesheet" href="./semantic/dist/components/popup.css">
+    <link rel="stylesheet" href="./semantic/dist/components/modal.css">
+</head>
+
+<body>
+    <div class="pusher">
+        <!-- Navbar -->
+        <div class="ui vertical masthead center aligned segment">
+            <div class="ui container">
+                <div class="ui large secondary pointing menu">
+                    <a class="toc item">
+                            <i class="sidebar icon"></i>
+                        </a>
+                    <button Class="item">Home</button>
+                    <button Class="item">Stories</button>
+                    <button Class="active item">Gallery</button>
+                    <div class="right item">
+                        <a class="ui button" id="btn_login">Log in</a>
+                        <a class="ui button" id="btn_signup">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui main text container" style="margin-top: 30px">
+            <h1 class="ui header">Gallery</h1>
+            <p>Here you can see all of our beautiful pictures</p>
+        </div>
+        <div class="ui grid margin-top">
+            <div class="eight wide column">
+
+            </div>
+            <div class="ui grid container">
+                <div class="five wide column">
+                    <img class="ui large rounded image" src="assets/images/Penguins.jpg" id="img1" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    />
+                </div>
+                <div class="five wide column">
+                    <img class="ui large rounded image" src="assets/images/Penguins.jpg" id="img2" data-description="hey1" />
+                </div>
+                <div class="five wide column">
+                    <img class="ui large rounded image" src="assets/images/Penguins.jpg" id="img3" data-description="hey2" />
+                </div>
+                <div class="five wide column">
+                    <img class="ui large rounded image" src="assets/images/Penguins.jpg" id="img4" data-description="hey3" />
+                </div>
+                <div class="five wide column">
+                    <img class="ui large rounded image" src="assets/images/Penguins.jpg" id="img5" data-description="hey4" />
+                </div>
+                <div class="five wide column">
+                    <img class="ui large rounded image" src="assets/images/Penguins.jpg" id="img6" data-description="hey5" />
+                </div>
+                <div class="five wide column">
+                    <img class="ui large rounded image" src="assets/images/Penguins.jpg" id="img7" data-description="hey6" />
+                </div>
+                <div class="five wide column">
+                    <img class="ui large rounded image" src="assets/images/Penguins.jpg" id="img8" data-description="hey7" />
+                </div>
+                <div class="five wide column">
+                    <img class="ui large rounded image" src="assets/images/Penguins.jpg" id="img9" data-description="hey8" />
+                </div>
+                <div class="five wide column">
+                    <img class="ui large rounded image" src="assets/images/Penguins.jpg" id="img10" data-description="hey9" />
+                </div>
+                <div class="five wide column">
+                    <img class="ui large rounded image" src="assets/images/Penguins.jpg" id="img11" data-description="hey0" />
+                </div>
+                <div class="five wide column">
+                    <img class="ui large rounded image" src="assets/images/Penguins.jpg" id="img12" data-description="hey+" />
+                </div>
+                <div class="five wide column">
+                    <img class="ui large rounded image" src="assets/images/Penguins.jpg" id="img13" data-description="hey´" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="imageModal" class="ui medium modal">
+        <div class="ui header">
+            <i class="image icon"></i> Image name
+        </div>
+        <div class="ui content ">
+            <img class="ui content rounded centered image" id="image">
+            <h4 class="ui horizontal divider header">
+                <i class="align justify icon"></i> Description
+            </h4>
+            <div id="description" class="ui text"></div>
+
+        </div>
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+    <script src="./semantic/dist/semantic.min.js"></script>
+    <script src="./semantic/dist/components/popup.js"></script>
+    <script src="./semantic/dist/components/modal.js"></script>
+
+    <script type="text/javascript">
+        $('img').click(function () {
+            $('#imageModal').modal({ observeChanges: true }).modal('show')
+            $('#image').attr('src',
+                $(this).attr('src')
+            )
+            $('#description').text(
+                $(this).data('description')
+            )
+        })
+        function determineNextImage(orderId) {
+            return orderId + 1;
+        }
+
+        function determinePreviousImage(orderId) {
+            return orderId - 1;
+        }
+
+        $('#nextImage').click(function () {
+
+            $(this).attr('src',
+                $('#img' + determineNextImage($(this).attr('id'))).attr('src'))
+            $('#description').text(
+                $('#img' + determineNextImage($(this).attr('id'))
+                )
+            )
+
+
+        })
+    </script>
+    <script src="./ModalHandler.js"></script>
+</body>
+
+</html>
