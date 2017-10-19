@@ -1,0 +1,22 @@
+{
+  "name": "byagersite",
+  "version": "1.0.0",
+  "main": "ModalHandler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanzzi/ByagerSite.git"
+  },
+  "author": "hanzzi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hanzzi/ByagerSite/issues"
+  },
+  "homepage": "https://github.com/hanzzi/ByagerSite#readme",
+  "description": "",
+  "dependencies": {
+    "semantic-ui": "^2.2.13"
+  }
+}
